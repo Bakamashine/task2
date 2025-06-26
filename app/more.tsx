@@ -1,5 +1,6 @@
 import Button2 from "@/components/Auth/Button2";
 import main_styles from "@/components/main_styles";
+import Paginator from "@/components/paginator";
 import { router } from "expo-router";
 import React, { useRef, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
@@ -48,12 +49,15 @@ const MyPager = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Text>Начало</Text>
-      <PagerView style={styles.pagerView} ref={ref} initialPage={0}>
+      <PagerView style={styles.pagerView} ref={ref} initialPage={0} >
         {content.map((item, index) => (
           <View key={index} style={styles.pagerView__page}>
             <Image style={styles.page__image} source={item.img} />
             <Text style={styles.page__h1}>{item.title}</Text>
             <Text style={styles.page__text}>{item.description}</Text>
+            <View style={styles.page__paginator}>
+                <Paginator current_page={currentPage} max_page={content.length} />
+            </View>
             <View style={styles.page__buttons}>
               <Button2
                 text="Skip"
@@ -102,7 +106,9 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 1000,
   },
-  pagerView__page: {},
+  pagerView__page: {
+    gap: 5
+  },
   page__h1: {
     fontSize: 36,
     color: "#292D32",
@@ -122,6 +128,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginTop: 10,
   },
+
 });
 
 export default MyPager;
