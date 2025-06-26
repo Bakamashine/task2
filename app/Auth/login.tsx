@@ -1,3 +1,4 @@
+import Button2 from "@/components/Auth/Button2";
 import CustomInput from "@/components/CustomInput";
 import AlterAuth from "@/includes/Auth/AlterAuth";
 import { StyleSheet, Text, View } from "react-native";
@@ -14,7 +15,11 @@ const Login = () => {
         />
         <Text style={styles.forgot}>Forgot Password?</Text>
         <View>
-        <AlterAuth />
+          <AlterAuth />
+        </View>
+
+        <View style={styles.button_footer}>
+          <Button2 text="Login"  width={"80%"}/>
         </View>
       </View>
     </View>
@@ -32,4 +37,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     marginLeft: "auto",
   },
+
+  button_footer: {
+    alignItems: "center"
+  }
 });

@@ -1,9 +1,9 @@
 import React from "react";
 import {
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  TouchableOpacityProps
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    TouchableOpacityProps
 } from "react-native";
 
 interface HeaderButtonProps extends TouchableOpacityProps {
@@ -32,7 +32,6 @@ const HeaderButton: React.FC<HeaderButtonProps> = ({
 
 export default HeaderButton;
 
-const my_color = "#F4739E";
 
 const styles = StyleSheet.create({
   button: {

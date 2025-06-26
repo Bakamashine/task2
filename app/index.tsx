@@ -15,6 +15,12 @@ const Main = () => {
         }}
         title="register"
       />
+      <Button
+        onPress={() => {
+          router.push("/more");
+        }}
+        title="More"
+      />
     </View>
   );
 };
@@ -22,7 +28,7 @@ const Main = () => {
 export default Main;
 
 const styles = StyleSheet.create({
-    buttons: {
-        gap: 10
-    }
-})
+  buttons: {
+    gap: 10,
+  },
+});
